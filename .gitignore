@@ -1,0 +1,14 @@
+# Sensitive files
+.env
+serviceAccountKey.json
+
+# Python stuff
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual environments
+venv/
+.env/
+.env.bak/

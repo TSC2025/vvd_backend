@@ -1,0 +1,21 @@
+# --- Web Framework & Server ---
+fastapi
+uvicorn[standard]
+
+# --- Environment & Configuration ---
+python-dotenv
+pydantic
+
+# --- Google & Firebase Services ---
+# For Firestore database interaction
+google-cloud-firestore
+# For server-side authentication (verifying tokens, etc.)
+firebase-admin
+
+# --- Google AI & Agent Frameworks ---
+# For interacting with the Gemini API via Google AI Studio (uses API Key)
+langchain-google-genai
+# For LangChain core functionality
+langchain
+# The Google Agent Development Kit
+google-adk
