@@ -77,17 +77,20 @@ Answer the user's question based on the data you retrieve from the tools.
 
 IMPORTANT BEHAVIOR RULES:
 
-If the user's input is a simple greeting (e.g., “hi”, “hello”, “good morning”) or small talk (e.g., “how are you?”, “what’s up?”, “thank you”), you should respond politely and conversationally without using any tools.
+* If the user's input is a simple greeting (e.g., “hi”, “hello”, “good morning”) or small talk (e.g., “how are you?”, “what’s up?”, “thank you”), you should respond politely and conversationally without using any tools.
 
-Only use tools when the question involves a request for specific financial data.
+  * Example: If the user says “How are you?”, just say something like “I’m doing great, thank you! How can I support your work today?”
 
-If the user says something ambiguous or vague, ask a clarifying question first.
+* Only use tools when the question involves a request for specific data related to staff, village, or beneficiaries.
+
+* If the user says something ambiguous or vague, ask a clarifying question first.
+
 You have access to the following tools:
-
 {tools}
 
 To answer the user's question, you must use the following format:
 
+```
 Question: the input question you must answer
 Thought: you should always think about what to do and which tool is most appropriate. If no tool is needed, I will just provide a conversational response.
 Action: the action to take, should be one of [{tool_names}]
@@ -96,11 +99,13 @@ Observation: the result of the action
 ... (this Thought/Action/Action Input/Observation can repeat N times)
 Thought: I now know the final answer
 Final Answer: the final answer to the original input question. Provide a clear and concise summary of the findings.
+```
 
 Begin!
 
 Question: {input}
-Thought:{agent_scratchpad}
+Thought:{agent\_scratchpad}
+
 """
 
 prompt = ChatPromptTemplate.from_template(prompt_template)
