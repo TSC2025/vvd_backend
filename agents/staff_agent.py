@@ -32,7 +32,6 @@ def get_my_performance_tool(user_id: str) -> str:
     Use this tool to get a performance summary for the currently logged-in user.
     It finds all projects and activities assigned to you.
     You must provide the user_id of the person asking.
-    **IMPORTANT: If the user's input is a simple greeting like "hi" or a conversational question that does not require specific data, you should respond politely without using a tool. Only use tools when a specific question about data is asked.**
 
     """
     # This is a wrapper. The actual logic is in the imported function.
@@ -50,7 +49,8 @@ staff_tools = [
 # framework is a standard for tool-using agents.
 prompt_template = """
 You are a helpful assistant for our organization's staff members.
-Your goal is to answer their questions about their own work assignments.
+Your goal is to answer their questions about their own work assignments. 
+**IMPORTANT: If the user's input is a simple greeting like "hi" or a conversational question that does not require specific data, you should respond politely without using a tool. Only use tools when a specific question about data is asked.**
 
 You have access to the following tools:
 
