@@ -29,6 +29,8 @@ def get_financial_report_tool(project_name: Optional[str] = None) -> Dict[str, A
     Use this tool to get financial reports.
     If the user asks for a specific project's financials, provide the 'project_name'.
     If the user asks for a general budget overview or a summary of all projects, call this tool without any arguments.
+    **IMPORTANT: If the user's input is a simple greeting like "hi" or a conversational question that does not require specific data, you should respond politely without using a tool. Only use tools when a specific question about data is asked.**
+
     """
     return get_financial_report(project_name=project_name)
 
